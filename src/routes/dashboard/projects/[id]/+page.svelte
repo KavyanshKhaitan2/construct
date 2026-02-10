@@ -18,6 +18,9 @@
 	let sortDropdownValue = $state('descending');
 	let sortDevlogsAscending = $derived.by(() => sortDropdownValue == 'ascending');
 
+onMount(() => {
+
+
 	let editable = $derived(data.project.status == 'building' || data.project.status == 'rejected');
 
 	let description = $state(form?.fields?.description ?? '');
@@ -35,6 +38,8 @@
 			data.validationConstraints.timeSpent.currentMax
 		);
 	}
+})
+
 
 	let formPending = $state(false);
 </script>
